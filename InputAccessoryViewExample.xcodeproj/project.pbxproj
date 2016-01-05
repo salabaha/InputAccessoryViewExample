@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		EF25F6531C3C2ABD00BAD712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25F6521C3C2ABD00BAD712 /* AppDelegate.swift */; };
-		EF25F6551C3C2ABD00BAD712 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25F6541C3C2ABD00BAD712 /* ViewController.swift */; };
+		EF25F6551C3C2ABD00BAD712 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25F6541C3C2ABD00BAD712 /* FirstViewController.swift */; };
 		EF25F6581C3C2ABD00BAD712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF25F6561C3C2ABD00BAD712 /* Main.storyboard */; };
 		EF25F65A1C3C2ABD00BAD712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF25F6591C3C2ABD00BAD712 /* Assets.xcassets */; };
 		EF25F65D1C3C2ABD00BAD712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF25F65B1C3C2ABD00BAD712 /* LaunchScreen.storyboard */; };
+		EF25F6651C3C2ADE00BAD712 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25F6641C3C2ADE00BAD712 /* SecondViewController.swift */; };
+		EF25F6671C3C2D0A00BAD712 /* AccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25F6661C3C2D0A00BAD712 /* AccessoryView.swift */; };
+		EF25F6691C3C31DF00BAD712 /* SecondViewControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF25F6681C3C31DF00BAD712 /* SecondViewControllerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EF25F64F1C3C2ABD00BAD712 /* InputAccessoryViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InputAccessoryViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF25F6521C3C2ABD00BAD712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF25F6541C3C2ABD00BAD712 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF25F6541C3C2ABD00BAD712 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		EF25F6571C3C2ABD00BAD712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF25F6591C3C2ABD00BAD712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF25F65C1C3C2ABD00BAD712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF25F65E1C3C2ABD00BAD712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF25F6641C3C2ADE00BAD712 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		EF25F6661C3C2D0A00BAD712 /* AccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryView.swift; sourceTree = "<group>"; };
+		EF25F6681C3C31DF00BAD712 /* SecondViewControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewControllerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				EF25F6521C3C2ABD00BAD712 /* AppDelegate.swift */,
-				EF25F6541C3C2ABD00BAD712 /* ViewController.swift */,
+				EF25F6661C3C2D0A00BAD712 /* AccessoryView.swift */,
+				EF25F6681C3C31DF00BAD712 /* SecondViewControllerView.swift */,
+				EF25F6541C3C2ABD00BAD712 /* FirstViewController.swift */,
+				EF25F6641C3C2ADE00BAD712 /* SecondViewController.swift */,
 				EF25F6561C3C2ABD00BAD712 /* Main.storyboard */,
 				EF25F6591C3C2ABD00BAD712 /* Assets.xcassets */,
 				EF25F65B1C3C2ABD00BAD712 /* LaunchScreen.storyboard */,
@@ -135,7 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF25F6551C3C2ABD00BAD712 /* ViewController.swift in Sources */,
+				EF25F6691C3C31DF00BAD712 /* SecondViewControllerView.swift in Sources */,
+				EF25F6651C3C2ADE00BAD712 /* SecondViewController.swift in Sources */,
+				EF25F6671C3C2D0A00BAD712 /* AccessoryView.swift in Sources */,
+				EF25F6551C3C2ABD00BAD712 /* FirstViewController.swift in Sources */,
 				EF25F6531C3C2ABD00BAD712 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +210,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -237,7 +249,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
