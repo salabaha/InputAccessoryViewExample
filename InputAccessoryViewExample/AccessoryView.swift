@@ -17,6 +17,7 @@ class AccessoryView: UITextField {
         super.awakeFromNib()
         disableShowingKeyboard()
         hideCursor()
+        isUserInteractionEnabled = true
     }
 }
 
@@ -58,31 +59,23 @@ extension AccessoryView {
         if gestureRecognizer is UILongPressGestureRecognizer {
             gestureRecognizer.isEnabled = false
         }
-        
+            
         super.addGestureRecognizer(gestureRecognizer)
     }
 }
 
 extension AccessoryView {
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        if touches.first?.tapCount == 1 {
-            sendActionsForControlEvents(.touchUpInside, with: event)
-        }
-    }
- 
-    func sendActionsForControlEvents(_ controlEvent: UIControl.Event, with event: UIEvent?) {
-        for target in allTargets {
-            if let actions = actions(forTarget: target, forControlEvent: controlEvent) {
-                for action in actions {
-                    sendAction(Selector(action), to: target, for: event)
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        for view in subviews {
+            let _point = self.convert(point, to: view)
+            if !view.isHidden && view.isUserInteractionEnabled && view.alpha > 0.01 && view.point(inside: _point, with: event) {
+                if let _view = view.hitTest(_point, with: event){
+                    return _view
                 }
             }
         }
+
+        return super.hitTest(point, with: event)
     }
 }

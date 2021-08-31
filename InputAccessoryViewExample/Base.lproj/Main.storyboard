@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,19 +65,26 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6FC-MO-gTc">
-                            <rect key="frame" x="8" y="14" width="304" height="22"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8u-zi-0XF">
+                            <rect key="frame" x="20" y="10" width="280" height="30"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <state key="normal" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                <color key="titleColor" red="0.94901960780000005" green="0.99215686270000003" blue="0.99988335370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="0.32156862749999998" green="0.60784313729999995" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="0.32156862749999998" green="0.60784313729999995" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.1764705882" green="0.73725490199999999" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="6FC-MO-gTc" firstAttribute="leading" secondItem="i5L-e7-TC5" secondAttribute="leading" constant="8" id="1Av-WD-ALZ"/>
-                        <constraint firstAttribute="trailing" secondItem="6FC-MO-gTc" secondAttribute="trailing" constant="8" id="9h3-ET-UAn"/>
-                        <constraint firstAttribute="bottom" secondItem="6FC-MO-gTc" secondAttribute="bottom" constant="14" id="WeZ-FE-u4h"/>
-                        <constraint firstItem="6FC-MO-gTc" firstAttribute="top" secondItem="i5L-e7-TC5" secondAttribute="top" constant="14" id="nvK-qI-8Bc"/>
+                        <constraint firstAttribute="bottom" secondItem="V8u-zi-0XF" secondAttribute="bottom" constant="10" id="JuS-fI-TgU"/>
+                        <constraint firstItem="V8u-zi-0XF" firstAttribute="leading" secondItem="i5L-e7-TC5" secondAttribute="leading" constant="20" id="WND-hZ-9M3"/>
+                        <constraint firstItem="V8u-zi-0XF" firstAttribute="top" secondItem="i5L-e7-TC5" secondAttribute="top" constant="10" id="cB6-Xm-0Ch"/>
+                        <constraint firstAttribute="trailing" secondItem="V8u-zi-0XF" secondAttribute="trailing" constant="20" id="qvY-xI-Saz"/>
                     </constraints>
                 </view>
             </objects>
@@ -101,4 +109,9 @@
             <point key="canvasLocation" x="78" y="425"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
