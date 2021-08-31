@@ -12,7 +12,8 @@ class SecondViewController: UIViewController {
     
     @IBOutlet var accessoryView: AccessoryView!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if #available(iOS 9, *) {
             accessoryView.becomeFirstResponder()
         } else {
@@ -28,7 +29,7 @@ class SecondViewController: UIViewController {
         }
     }
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder: Bool {
         if #available(iOS 9, *) {
             return true
         } else {

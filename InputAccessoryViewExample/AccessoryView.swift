@@ -9,8 +9,7 @@
 import UIKit
 
 class AccessoryView: UITextField {
-    
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder: Bool {
         return true
     }
     
@@ -28,36 +27,36 @@ extension AccessoryView {
     }
     
     private func hideCursor() {
-        tintColor = UIColor.clearColor()
+        tintColor = UIColor.clear
     }
     
     override func accessibilityActivate() -> Bool {
         return false
     }
     
-    override var editing: Bool {
+    override var isEditing: Bool {
         return false
     }
     
-    override func caretRectForPosition(position: UITextPosition) -> CGRect {
-        return CGRectZero
+    override func caretRect(for position: UITextPosition) -> CGRect {
+        return .zero
     }
     
-    override func selectionRectsForRange(range: UITextRange) -> [AnyObject] {
+    override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
         return []
     }
     
-    override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
-        if action == "copy:" || action == "selectAll:" || action == "paste:" {
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if action == #selector(UIResponder.copy(_:)) || action == #selector(UIResponder.selectAll(_:)) || action == #selector(UIResponder.paste(_:)){
             return false
         }
         
         return super.canPerformAction(action, withSender: sender)
     }
     
-    override func addGestureRecognizer(gestureRecognizer: UIGestureRecognizer) {
+    override func addGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer) {
         if gestureRecognizer is UILongPressGestureRecognizer {
-            gestureRecognizer.enabled = false
+            gestureRecognizer.isEnabled = false
         }
         
         super.addGestureRecognizer(gestureRecognizer)
@@ -65,22 +64,23 @@ extension AccessoryView {
 }
 
 extension AccessoryView {
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         if touches.first?.tapCount == 1 {
-            sendActionsForControlEvents(.TouchUpInside, withEvent: event)
+            sendActionsForControlEvents(.touchUpInside, with: event)
         }
     }
-    
-    func sendActionsForControlEvents(controlEvents: UIControlEvents, withEvent event: UIEvent?) {
-        for target in allTargets() {
-            if let actions = actionsForTarget(target, forControlEvent: controlEvents) {
+ 
+    func sendActionsForControlEvents(_ controlEvent: UIControl.Event, with event: UIEvent?) {
+        for target in allTargets {
+            if let actions = actions(forTarget: target, forControlEvent: controlEvent) {
                 for action in actions {
-                    sendAction(Selector(action), to: target, forEvent: event)
+                    sendAction(Selector(action), to: target, for: event)
                 }
             }
         }

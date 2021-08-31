@@ -11,7 +11,7 @@ import UIKit
 class SecondViewControllerView: UIView {
     @IBOutlet weak var accessoryView: AccessoryView!
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder: Bool {
         return true
     }
     
